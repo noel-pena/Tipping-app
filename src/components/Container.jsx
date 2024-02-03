@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import RadioGroupRating from "./RadioGroupRating";
-import MultilineTextFields from "./MultilineTextFields";
+import { MultilineTextFields } from "./MultilineTextFields";
 
 export const Container = () => {
   return (
