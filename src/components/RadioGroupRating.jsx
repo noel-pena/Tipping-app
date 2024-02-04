@@ -20,29 +20,31 @@ const StyledRating = styled(Rating)(({ theme }) => ({
 const customIcons = {
   1: {
     icon: <SentimentVeryDissatisfiedIcon color="error" size="large" />,
-    label: "Very Dissatisfied",
+    label: "0",
   },
   2: {
     icon: <SentimentDissatisfiedIcon color="error" />,
-    label: "Dissatisfied",
+    label: "0.14",
   },
   3: {
     icon: <SentimentSatisfiedIcon color="warning" />,
-    label: "Neutral",
+    label: "0.18",
   },
   4: {
     icon: <SentimentSatisfiedAltIcon color="success" />,
-    label: "Satisfied",
+    label: "0.2",
   },
   5: {
     icon: <SentimentVerySatisfiedIcon color="success" />,
-    label: "Very Satisfied",
+    label: "0.22",
   },
   6: {
     icon: null,
     label: null,
   },
 };
+
+console.log(customIcons[2].label);
 
 function IconContainer(props) {
   const { value, ...other } = props;
@@ -61,6 +63,9 @@ export default function RadioGroupRating() {
       IconContainerComponent={IconContainer}
       getLabelText={(value) => customIcons[value].label}
       highlightSelectedOnly
+      onClick={(e) => {
+        return e.getLabelText;
+      }}
     />
   );
 }

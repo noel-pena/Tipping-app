@@ -25,9 +25,11 @@ export const Container = () => {
           flexDirection: "column",
         }}
       >
-        <p>Service Rating:</p>
+        <p>Service rating:</p>
         <RadioGroupRating />
         <MultilineTextFields />
+        <p className="total">Tip amount: </p>
+        <p className="total">Total: </p>
       </Grid>
     </Grid>
   );
