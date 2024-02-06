@@ -44,18 +44,29 @@ const customIcons = {
   },
 };
 
-console.log(customIcons[2].label);
-
-function IconContainer(props) {
-  const { value, ...other } = props;
-  return <span {...other}>{customIcons[value].icon}</span>;
-}
-
-IconContainer.propTypes = {
-  value: PropTypes.number.isRequired,
-};
-
 export default function RadioGroupRating() {
+  const handleIconClick = (value) => {
+    console.log(`Icon ${value} selected. Label: ${customIcons[value].label}`);
+  };
+
+  function IconContainer(props) {
+    const { value, ...other } = props;
+
+    const handleClick = () => {
+      handleIconClick(value);
+    };
+
+    return (
+      <span {...other} onClick={handleClick}>
+        {customIcons[value].icon}
+      </span>
+    );
+  }
+
+  IconContainer.propTypes = {
+    value: PropTypes.number.isRequired,
+  };
+
   return (
     <StyledRating
       name="highlight-selected-only"
@@ -63,9 +74,6 @@ export default function RadioGroupRating() {
       IconContainerComponent={IconContainer}
       getLabelText={(value) => customIcons[value].label}
       highlightSelectedOnly
-      onClick={(e) => {
-        return e.getLabelText;
-      }}
     />
   );
 }
