@@ -19,45 +19,61 @@ const StyledRating = styled(Rating)(({ theme }) => ({
 
 const customIcons = {
   1: {
+    id: 1,
     icon: <SentimentVeryDissatisfiedIcon color="error" size="large" />,
     label: "0",
   },
   2: {
+    id: 2,
     icon: <SentimentDissatisfiedIcon color="error" />,
     label: "0.14",
   },
   3: {
+    id: 3,
     icon: <SentimentSatisfiedIcon color="warning" />,
     label: "0.18",
   },
   4: {
+    id: 4,
     icon: <SentimentSatisfiedAltIcon color="success" />,
     label: "0.2",
   },
   5: {
+    id: 5,
     icon: <SentimentVerySatisfiedIcon color="success" />,
     label: "0.22",
   },
   6: {
+    id: 6,
     icon: null,
     label: null,
   },
 };
 
 export default function RadioGroupRating() {
-  const handleIconClick = (value) => {
-    console.log(`Icon ${value} selected. Label: ${customIcons[value].label}`);
+  // const veryDissatisfied = customIcons[1].label;
+  // const dissatisfied = customIcons[2].label;
+  // const neutral = customIcons[3].label;
+  // const satisfied = customIcons[4].label;
+  // const verySatisfied = customIcons[5].label;
+
+  const iconProps = {
+    cursor: "pointer",
+    style: { pointerEvents: "auto" },
   };
 
   function IconContainer(props) {
     const { value, ...other } = props;
-
-    const handleClick = () => {
-      handleIconClick(value);
+    const handleIconClick = () => {
+      const label = customIcons[value].label;
+      console.log(label);
     };
-
     return (
-      <span {...other} onClick={handleClick}>
+      <span
+        {...other}
+        {...iconProps}
+        onClick={() => handleIconClick(customIcons[value].id)}
+      >
         {customIcons[value].icon}
       </span>
     );
