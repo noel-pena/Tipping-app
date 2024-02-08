@@ -51,12 +51,6 @@ const customIcons = {
 };
 
 export default function RadioGroupRating() {
-  // const veryDissatisfied = customIcons[1].label;
-  // const dissatisfied = customIcons[2].label;
-  // const neutral = customIcons[3].label;
-  // const satisfied = customIcons[4].label;
-  // const verySatisfied = customIcons[5].label;
-
   const iconProps = {
     cursor: "pointer",
     style: { pointerEvents: "auto" },
@@ -64,10 +58,12 @@ export default function RadioGroupRating() {
 
   function IconContainer(props) {
     const { value, ...other } = props;
+
     const handleIconClick = () => {
       const label = customIcons[value].label;
       console.log(label);
     };
+
     return (
       <span
         {...other}
