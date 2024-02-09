@@ -4,20 +4,19 @@ import TextField from "@mui/material/TextField";
 import { useState } from "react";
 
 export const MultilineTextFields = ({ tips }) => {
-  console.log(`tips inside of multiline: ${tips}`);
   const [total, setTotal] = useState(0);
   const [tipAmount, setTipAmount] = useState(0);
   const [billAmount, setBillAmount] = useState(0);
 
   function handleBillAmount(e) {
-    setBillAmount(parseInt(e.target.value));
+    setBillAmount(parseFloat(e.target.value));
   }
 
   React.useEffect(() => {
-    const calculateTip = billAmount * tips;
-    setTipAmount(parseInt(calculateTip));
-    const calculateTotal = calculateTip + billAmount;
-    setTotal(parseInt(calculateTotal));
+    const calculateTip = +(billAmount * tips).toFixed(2);
+    setTipAmount(calculateTip || "None");
+    const calculateTotal = +(calculateTip + billAmount).toFixed(2);
+    setTotal(calculateTotal || "None");
   }, [billAmount, tips]);
 
   return (
