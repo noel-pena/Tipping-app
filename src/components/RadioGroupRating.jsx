@@ -1,4 +1,6 @@
 import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import Rating from "@mui/material/Rating";
@@ -50,7 +52,7 @@ const customIcons = {
   },
 };
 
-export default function RadioGroupRating() {
+export const RadioGroupRating = ({ setTips }) => {
   const iconProps = {
     cursor: "pointer",
     style: { pointerEvents: "auto" },
@@ -59,16 +61,11 @@ export default function RadioGroupRating() {
   function IconContainer(props) {
     const { value, ...other } = props;
 
-    const handleIconClick = () => {
-      const label = customIcons[value].label;
-      console.log(label);
-    };
-
     return (
       <span
         {...other}
         {...iconProps}
-        onClick={() => handleIconClick(customIcons[value].id)}
+        onClick={() => setTips(customIcons[value].label)}
       >
         {customIcons[value].icon}
       </span>
@@ -88,4 +85,4 @@ export default function RadioGroupRating() {
       highlightSelectedOnly
     />
   );
-}
+};

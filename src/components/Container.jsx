@@ -1,9 +1,13 @@
 import { Grid } from "@mui/material";
-import React from "react";
-import RadioGroupRating from "./RadioGroupRating";
+import React, { useState } from "react";
+import { RadioGroupRating } from "./RadioGroupRating";
 import { MultilineTextFields } from "./MultilineTextFields";
 
 export const Container = () => {
+  const [tips, setTips] = useState(0);
+
+  console.log(`tips from the container: ${tips}`);
+
   return (
     <Grid
       sx={{
@@ -26,10 +30,8 @@ export const Container = () => {
         }}
       >
         <p>Service rating:</p>
-        <RadioGroupRating />
-        <MultilineTextFields />
-        <p className="total">Tip amount: </p>
-        <p className="total">Total: </p>
+        <RadioGroupRating setTips={setTips} />
+        <MultilineTextFields tips={tips} />
       </Grid>
     </Grid>
   );
