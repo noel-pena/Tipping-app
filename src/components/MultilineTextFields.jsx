@@ -16,7 +16,7 @@ export const MultilineTextFields = ({ tips }) => {
     const calculateTip = +(billAmount * tips).toFixed(2);
     setTipAmount(calculateTip || "None");
     const calculateTotal = +(calculateTip + billAmount).toFixed(2);
-    setTotal(calculateTotal || "None");
+    setTotal(calculateTotal || "");
   }, [billAmount, tips]);
 
   return (
