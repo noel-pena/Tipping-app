@@ -1,4 +1,5 @@
-import * as React from "react";
+/* eslint-disable react/prop-types */
+import { useEffect } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
@@ -12,7 +13,7 @@ export const MultilineTextFields = ({ tips }) => {
     setBillAmount(parseFloat(e.target.value));
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     const calculateTip = +(billAmount * tips).toFixed(2);
     setTipAmount(calculateTip || "None");
     const calculateTotal = +(calculateTip + billAmount).toFixed(2);

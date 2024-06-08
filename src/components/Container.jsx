@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import { RadioGroupRating } from "./RadioGroupRating";
 import { MultilineTextFields } from "./MultilineTextFields";
 
