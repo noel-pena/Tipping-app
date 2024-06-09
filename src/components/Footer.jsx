@@ -4,7 +4,7 @@ export const Footer = () => {
 
   return (
     <div className="footer">
-      <footer>Noel P Inc | Copyright © {year}</footer>
+      <footer>NPX | Copyright © {year}</footer>
     </div>
   );
 };

@@ -9,9 +9,9 @@ export const MultilineTextFields = ({ tips }) => {
   const [tipAmount, setTipAmount] = useState(0);
   const [billAmount, setBillAmount] = useState(0);
 
-  function handleBillAmount(e) {
+  const handleBillAmount = (e) => {
     setBillAmount(parseFloat(e.target.value));
-  }
+  };
 
   useEffect(() => {
     const calculateTip = +(billAmount * tips).toFixed(2);

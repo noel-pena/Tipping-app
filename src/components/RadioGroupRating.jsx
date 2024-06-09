@@ -56,7 +56,7 @@ export const RadioGroupRating = ({ setTips }) => {
     style: { pointerEvents: "auto" },
   };
 
-  function IconContainer(props) {
+  const IconContainer = (props) => {
     const { value, ...other } = props;
 
     return (
@@ -68,7 +68,7 @@ export const RadioGroupRating = ({ setTips }) => {
         {customIcons[value].icon}
       </span>
     );
-  }
+  };
 
   IconContainer.propTypes = {
     value: PropTypes.number.isRequired,
