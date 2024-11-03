@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {Box, TextField, Typography} from "@mui/material";
 
 export const MultilineTextFields = ({ tips }) => {
   const [total, setTotal] = useState(0);
@@ -23,13 +21,13 @@ export const MultilineTextFields = ({ tips }) => {
   return (
     <Box
       component="form"
+      p={5}
       sx={{
         "& .MuiTextField-root": { m: 1, width: "25ch" },
       }}
       noValidate
       autoComplete="off"
     >
-      <div>
         <TextField
           id="standard-multiline-flexible"
           onChange={handleBillAmount}
@@ -38,9 +36,8 @@ export const MultilineTextFields = ({ tips }) => {
           maxRows={4}
           variant="standard"
         />
-      </div>
-      <p className="total">Tip amount: {tipAmount} </p>
-      <p className="total">Total: {total} </p>
+      <Typography p={1} className="total">Tip amount: {tipAmount} </Typography>
+      <Typography p={1} className="total">Total: {total} </Typography>
     </Box>
   );
 };
