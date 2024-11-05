@@ -18,21 +18,21 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/noel-pena/Tipping-app
-   ```
+```bash
+git clone https://github.com/noel-pena/Tipping-app
+```
 
 2. Install the dependencies:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 3. Start the development server:
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 4. Open your browser and go to `http://localhost:3000` to see the app in action.
 
