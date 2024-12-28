@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid2 as Grid } from "@mui/material";
 import { useState } from "react";
 import { RadioGroupRating } from "./RadioGroupRating";
 import { MultilineTextFields } from "./MultilineTextFields";
@@ -17,10 +17,9 @@ export const Container = () => {
     >
       <Grid
         className="container"
-        item
-        xs={6}
-        p={5}
+        size={{xs: 6}}
         sx={{
+          p: 5,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
